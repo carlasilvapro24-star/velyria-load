@@ -1,82 +1,81 @@
 <!DOCTYPE html>
-<html style="background: #0A0015;"> <head>
+<html style="background: #080010;">
+<head>
     <meta charset="utf-8">
-    <title>Velyria Roleplay - Loading Pro</title>
+    <title>Vélyria DarkRP - Loading</title>
     <style>
-        /* Optimisation maximale contre le flash blanc */
+        /* Empêche le flash blanc au chargement */
         html, body { 
             margin: 0; padding: 0; width: 100%; height: 100%; 
-            background-color: #0A0015; overflow: hidden;
-            /* Police système moderne et propre */
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #080010; overflow: hidden;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif; 
             color: white;
         }
         
-        /* Arrière-plan sombre et flou de l'exemple KobraLost */
+        /* Fond flou et sombre pour faire ressortir le logo */
         .background {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            /* Tu peux changer cette image de fond, mais une sombre aide */
             background: url('https://i.imgur.com/8Qp4R3b.jpg') no-repeat center center;
             background-size: cover;
-            /* C'est ce qui fait l'effet : sombre et flou */
-            filter: brightness(0.2) blur(5px); 
+            filter: brightness(0.15) blur(10px); 
             z-index: 1;
         }
 
-        /* L'overlay pour centrer le contenu */
         .overlay {
             position: relative; width: 100%; height: 100%;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             z-index: 2;
         }
 
-        /* Le conteneur du logo, imitant l'exemple KobraLost */
-        .logo-container {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
+        /* Ton logo Catbox */
         .server-logo {
-            /* --- REMPLACE CE LIEN PAR TON LOGO SUR GITHUB --- */
-            /* Upload ton logo sur GitHub, récupère le lien 'Raw' et mets-le ici */
-            content: url('https://raw.githubusercontent.com/carlasilvapro24-star/velyria-load/main/image_3.png');
-            
-            max-width: 280px; /* Taille du logo (comme dans ton exemple) */
+            width: 280px;
             height: auto;
-            /* Petite lueur douce assortie (violet/cyan) */
-            filter: drop-shadow(0 0 15px rgba(191, 0, 255, 0.4)) drop-shadow(0 0 10px rgba(0, 212, 255, 0.2)); 
+            /* Lueur violette assortie au logo */
+            filter: drop-shadow(0 0 25px rgba(191, 0, 255, 0.6));
+            animation: float 4s ease-in-out infinite;
         }
 
-        /* Le texte "BIENVENUE SUR" (style propre et petit) */
         .welcome-text {
             font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            color: rgba(255, 255, 255, 0.7);
-            margin: 0;
-            margin-top: 20px;
+            letter-spacing: 5px;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 30px 0 5px 0;
         }
 
-        /* Le nom du serveur "VELYRIA ROLEPLAY" (grand et propre, style KobraLost) */
         h1 { 
-            font-size: 34px; /* Taille moderne et lisible, pas géante */
+            font-size: 42px;
             text-transform: uppercase; 
-            letter-spacing: 6px; 
+            letter-spacing: 8px; 
             margin: 0; 
-            margin-top: 6px;
-            color: white;
-            font-weight: 700;
+            font-weight: 900;
+            /* Dégradé de blanc vers le violet de ton logo */
+            background: linear-gradient(to bottom, #ffffff 40%, #bf00ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(191, 0, 255, 0.3));
         }
 
-        /* Le statut de chargement tout en bas */
+        /* Texte de statut en bas de page */
         .status-box {
             position: absolute;
-            bottom: 35px;
+            bottom: 40px;
             text-align: center;
             width: 100%;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 13px;
-            letter-spacing: 1.5px;
+        }
+
+        .status-text {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Animation de flottement fluide */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
         }
     </style>
 </head>
@@ -84,17 +83,15 @@
     <div class="background"></div>
     <div class="overlay">
         
-        <div class="logo-container">
-            <img class="server-logo" alt="Velyria Logo">
-        </div>
+        <img src="https://files.catbox.moe/gyfz19.png" class="server-logo" alt="Velyria Logo">
 
         <p class="welcome-text">Bienvenue sur</p>
-        <h1>VELYRIA ROLEPLAY</h1>
+        <h1>Vélyria DarkRP</h1>
 
     </div>
 
     <div class="status-box">
-        <p>Chargement des ressources du serveur Velyria...</p>
+        <p class="status-text">Chargement des données de la cité...</p>
     </div>
 </body>
 </html>
