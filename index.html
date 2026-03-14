@@ -1,34 +1,100 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html style="background: #0A0015;"> <head>
     <meta charset="utf-8">
-    <title>Velyria Roleplay - Loading</title>
+    <title>Velyria Roleplay - Loading Pro</title>
     <style>
-        body {
-            margin: 0; padding: 0; overflow: hidden;
-            background: #111; color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: url('https://images.wallpaperscraft.com/image/single/city_night_street_137456_1920x1080.jpg') no-repeat center center fixed;
+        /* Optimisation maximale contre le flash blanc */
+        html, body { 
+            margin: 0; padding: 0; width: 100%; height: 100%; 
+            background-color: #0A0015; overflow: hidden;
+            /* Police système moderne et propre */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            color: white;
+        }
+        
+        /* Arrière-plan sombre et flou de l'exemple KobraLost */
+        .background {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            /* Tu peux changer cette image de fond, mais une sombre aide */
+            background: url('https://i.imgur.com/8Qp4R3b.jpg') no-repeat center center;
             background-size: cover;
+            /* C'est ce qui fait l'effet : sombre et flou */
+            filter: brightness(0.2) blur(5px); 
+            z-index: 1;
         }
+
+        /* L'overlay pour centrer le contenu */
         .overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.7); display: flex; flex-direction: column; align-items: center; justify-content: center;
+            position: relative; width: 100%; height: 100%;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            z-index: 2;
         }
-        h1 { font-size: 80px; text-transform: uppercase; letter-spacing: 10px; margin: 0; color: #00d4ff; text-shadow: 0 0 20px #00d4ff; }
-        .box { background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 10px; border: 1px solid rgba(0, 212, 255, 0.3); width: 400px; text-align: center; }
-        .loading-bar { width: 100%; height: 10px; background: #222; margin-top: 20px; border-radius: 5px; overflow: hidden; }
-        .progress { width: 30%; height: 100%; background: #00d4ff; box-shadow: 0 0 10px #00d4ff; }
+
+        /* Le conteneur du logo, imitant l'exemple KobraLost */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .server-logo {
+            /* --- REMPLACE CE LIEN PAR TON LOGO SUR GITHUB --- */
+            /* Upload ton logo sur GitHub, récupère le lien 'Raw' et mets-le ici */
+            content: url('https://raw.githubusercontent.com/carlasilvapro24-star/velyria-load/main/image_3.png');
+            
+            max-width: 280px; /* Taille du logo (comme dans ton exemple) */
+            height: auto;
+            /* Petite lueur douce assortie (violet/cyan) */
+            filter: drop-shadow(0 0 15px rgba(191, 0, 255, 0.4)) drop-shadow(0 0 10px rgba(0, 212, 255, 0.2)); 
+        }
+
+        /* Le texte "BIENVENUE SUR" (style propre et petit) */
+        .welcome-text {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+            margin-top: 20px;
+        }
+
+        /* Le nom du serveur "VELYRIA ROLEPLAY" (grand et propre, style KobraLost) */
+        h1 { 
+            font-size: 34px; /* Taille moderne et lisible, pas géante */
+            text-transform: uppercase; 
+            letter-spacing: 6px; 
+            margin: 0; 
+            margin-top: 6px;
+            color: white;
+            font-weight: 700;
+        }
+
+        /* Le statut de chargement tout en bas */
+        .status-box {
+            position: absolute;
+            bottom: 35px;
+            text-align: center;
+            width: 100%;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+            letter-spacing: 1.5px;
+        }
     </style>
 </head>
 <body>
+    <div class="background"></div>
     <div class="overlay">
-        <h1>VELYRIA</h1>
-        <div class="box">
-            <p>Bienvenue sur le serveur</p>
-            <p style="color: #00d4ff;">Chargement des données...</p>
-            <div class="loading-bar"><div class="progress"></div></div>
+        
+        <div class="logo-container">
+            <img class="server-logo" alt="Velyria Logo">
         </div>
+
+        <p class="welcome-text">Bienvenue sur</p>
+        <h1>VELYRIA ROLEPLAY</h1>
+
+    </div>
+
+    <div class="status-box">
+        <p>Chargement des ressources du serveur Velyria...</p>
     </div>
 </body>
 </html>
