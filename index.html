@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Vélyria DarkRP - Loading</title>
     <style>
-        /* Empêche le flash blanc au chargement */
         html, body { 
             margin: 0; padding: 0; width: 100%; height: 100%; 
             background-color: #080010; overflow: hidden;
@@ -12,12 +11,15 @@
             color: white;
         }
         
-        /* Fond flou et sombre pour faire ressortir le logo */
+        /* CORRECTIF DU FOND : Utilisation d'une image plus stable */
         .background {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://i.imgur.com/8Qp4R3b.jpg') no-repeat center center;
+            position: fixed; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%;
+            /* J'ai changé le lien pour un fond urbain sombre ultra-stable */
+            background: url('https://images2.alphacoders.com/605/605165.jpg') no-repeat center center;
             background-size: cover;
-            filter: brightness(0.15) blur(10px); 
+            filter: brightness(0.15) blur(8px); 
             z-index: 1;
         }
 
@@ -25,13 +27,12 @@
             position: relative; width: 100%; height: 100%;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             z-index: 2;
+            background: rgba(0, 0, 0, 0.3); /* Couche de sécurité pour le contraste */
         }
 
-        /* Ton logo Catbox */
         .server-logo {
             width: 280px;
             height: auto;
-            /* Lueur violette assortie au logo */
             filter: drop-shadow(0 0 25px rgba(191, 0, 255, 0.6));
             animation: float 4s ease-in-out infinite;
         }
@@ -50,14 +51,12 @@
             letter-spacing: 8px; 
             margin: 0; 
             font-weight: 900;
-            /* Dégradé de blanc vers le violet de ton logo */
             background: linear-gradient(to bottom, #ffffff 40%, #bf00ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 10px rgba(191, 0, 255, 0.3));
         }
 
-        /* Texte de statut en bas de page */
         .status-box {
             position: absolute;
             bottom: 40px;
@@ -72,7 +71,6 @@
             letter-spacing: 3px;
         }
 
-        /* Animation de flottement fluide */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
